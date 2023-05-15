@@ -5,3 +5,8 @@
 *.gz
 *.toc
 *.fdb_latexmk
+*.bbl
+*.bcf
+*.blg
+*.run*
+*.xdv
