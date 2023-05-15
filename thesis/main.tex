@@ -1,0 +1,63 @@
+\documentclass[12pt, twoside]{report}
+\usepackage[utf8]{inputenc}
+\usepackage[german]{babel}
+\usepackage[hidelinks]{hyperref}
+\usepackage{graphicx}
+\graphicspath{images/}
+\usepackage[a4paper,width=150mm,top=25mm,bottom=25mm, bindingoffset=6mm]{geometry}
+\usepackage{fancyhdr}
+
+
+\pagestyle{fancy}
+\setlength{\headheight}{14.49998pt}
+\addtolength{\topmargin}{-2.49998pt}
+\fancyhead{}
+\fancyhead[RO, LE]{\today}
+\fancyfoot{}
+\fancyfoot[LE, RO]{\thepage}
+\fancyfoot[LO, CE]{Chapter \thechapter}
+\fancyfoot[CO, RE]{Siani Lucien}
+
+
+\newcommand{\lorem}{Lorem exercitation sunt pariatur incididunt dolor nulla irure deserunt irure elit. Ut voluptate adipisicing incididunt proident laboris tempor excepteur magna sint. Velit sunt esse non minim aliqua aute eiusmod minim. Laboris eu aliqua tempor laborum. Aute cillum dolore veniam exercitation eu reprehenderit reprehenderit enim et. Aliquip culpa do commodo laboris deserunt tempor consectetur incididunt. Aliqua id esse ipsum dolor non reprehenderit cupidatat ea do pariatur occaecat non.}
+
+
+\title{
+    {\LARGE Hoschschule Bremerhaven}\\
+    {\large Fakultät II - Informatik}\\
+    {Entwicklung einer Webanwendung}\\
+    {\includegraphics{images/hs-logo.png}}
+}
+\author{Siani Lucien Leroy}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+
+
+\chapter*{Abstract}
+\lorem
+
+\chapter*{Danksagung}
+\lorem
+
+\chapter*{Declaration}
+\lorem
+
+\tableofcontents
+
+\chapter{Einleitung}
+\input{chapters/Einleitung.tex}
+
+\chapter{Grundlagen}
+\input{chapters/Grundlagen.tex}
+
+\chapter{Implementation}
+\input{chapters/Implementation.tex}
+
+\chapter{Fazit}
+\input{chapters/Fazit.tex}
+
+
+\end{document}

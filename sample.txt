@@ -1,0 +1,77 @@
+%-----(A CORRIGER)-----%
+% corriger la hauteur des "en-têtes" pour permettre l'insertion des en-têtes intermédiaires qui reprennent les titres de chapitres/section". (cf log triangle jaune) --> solution trouvée avec les titres courts => \chapter [titre court] {titre long}%
+
+%--------------------------%
+%-----(BEGIN PREAMBLE)-----%
+%--------------------------%
+\documentclass[a4paper,12pt ,twoside ,openright ,extrafontsizes]{memoir}
+\raggedbottom
+%[twoside] est utilisé pour indiquer que le document sera imprimé recto-verso.%
+%[openright] est utilisé pour indiquer que tout nouveau chapitre doit commencer sur un recto.%
+%[extrafontsizes] est utilisé pour permettre, si l'on veut, le recours à des tailles de polices d'écritures dépassant les 25pt.
+
+
+%-----( BEGIN PACKAGEs)-----%
+%---------------------------%
+\usepackage[utf8]{inputenc} %obligatoire%
+\usepackage[french]{babel}
+\usepackage[T1]{fontenc}
+\usepackage{xcolor}%pour surligner du texte (la commande en cours de frappe est  : \colorbox{couleur}{texte  à surligner}%
+\usepackage{soulutf8} %la commande pour surligner est : \texthl{texte à surligner}
+\usepackage{ulem}
+
+
+%-----(BEGIN MACRO)-----%
+%-----------------------%
+
+ %enclenche le style de chapitre utilisé (pour d'autres exemples compatibles, voir "the memoir class (2018) p.385 et sq.)
+\newcommand*{\sclabel}[1]{\normalfont\scshape #1} %à voir si je conserve, permet de personnaliser les étiquettes des items des listes...
+
+\OnehalfSpacing %interligne 1,5
+
+%-----CHAPTER STYLE "ELL" (BEGIN)-----%
+\makeatletter %ne pas oublier cette balise lorsque l'on copie/colle un bout de code tel quel%
+\makechapterstyle{ell}{%
+  \chapterstyle{default}
+  \renewcommand*{\chapnumfont}{\normalfont\HUGE\sffamily}
+  \renewcommand*{\chaptitlefont}{\normalfont\huge\sffamily}
+  \settowidth{\chapindent}{\chapnumfont 111}
+  % \renewcommand*{\chapterheadstart}{\begingroup
+  %   \vspace*{\beforechapskip}%
+  %   \begin{adjustwidth}{}{-\chapindent}%
+  %   \hrulefill
+  %   \smash{\rule{0.4pt}{15mm}}
+  %   \end{adjustwidth}\endgroup}
+  \renewcommand*{\printchaptername}{}
+  \renewcommand*{\chapternamenum}{}
+  \renewcommand*{\printchapternum}{%
+    % \begin{adjustwidth}{}{-\chapindent}
+    % \hfill
+    % \raisebox{10mm}[0pt][0pt]{\chapnumfont \thechapter}%
+    %                           \hspace*{1em}
+    % \end{adjustwidth}\vspace*{-3.0\onelineskip}
+    \chs@ell@helper{\thechapter}%
+  }
+  \renewcommand\printchapternonum{%
+    \chs@ell@helper{}\afterchapternum}
+  \renewcommand*{\printchaptertitle}[1]{%
+    %\vskip\onelineskip
+    \raggedleft {\chaptitlefont ##1}\par\nobreak}}
+\makeatother % et ne pas oublier celle-ci pour clore le cadre créé par \makeatletter en début de copier/coller.
+
+%-----CHAPTER STYLE "ELL" (END)-------%
+\chapterstyle{ell}%à placer après la section ci-dessus qui reparamètre certains aspects du "chapterstyle ELL". Si on place la commande avant, elle chargera la configuration d'origine au lieu de prendre encompte les modifications ci-dessus.
+
+
+ \setsecnumdepth{section}%indique à partir de quel niveau de titre on numérote
+ \maxsecnumdepth{subsubsection}%indique jusqu'à quel niveau de titre on numérote
+
+\setlength{\headheight}{15.5pt}
+
+%-----(END MACRO)-----%
+%---------------------%
+
+
+%--------------------------%
+%------(END PREAMBLE)------%
+%--------------------------%

@@ -1,0 +1,122 @@
+\documentclass[12pt, a4paper]{article}
+% \usepackage{fullpage} % for having 1inch space from each side of the document
+\usepackage[margin=1in]{geometry} % same behavior as fullpage
+\usepackage{amsfonts} % for all mathematical symbol ( ensemble des nombres reels usw...)
+\usepackage[hidelinks]{hyperref}
+\usepackage{enumerate}
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage[utf8]{inputenc} %obligatoire%
+\usepackage[german]{babel}
+\usepackage[T1]{fontenc}
+\usepackage{xcolor}
+\parindent0px
+
+\input{title.tex}
+
+% def is used to defined new macros 
+\def\makro1{This is a simple macro for testing purpose}
+
+\def\eq1{y = \frac{(x-2)}{3x-2y-5}}
+
+% \newcommand is used to defined new command ( same as macro but a little more complex)
+
+\newcommand\shortlorem{Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.}
+
+
+
+\begin{document}
+
+
+\maketitle
+
+\pagebreak
+\tableofcontents
+
+\pagebreak
+
+\colorbox{red}{Test}
+L'ensemble des nombres reels est: $\mathbb{R}$ \\
+L'ensemble des nombres Decimaux est: $\mathbb{D}$ \\
+L'ensemble des nombres entiers naturels est: $\mathbb{N}$
+
+\vspace{1cm}
+\shortlorem
+\vspace{1cm}
+
+This is the value of the macro: \makro1\\
+And this is the second macro: $$\eq1$$
+
+% \begin{figure}[h]
+%         % the option is used to defined where the image is going to be placed in the document: b for bottom / h for here / t for top / H ( from the float package ) to force the image to be here. 
+%         \centering
+%         % \includegraphics[]{logo}
+%         \caption{This is the logo of my new company}
+
+% \end{figure}
+
+\pagebreak
+
+
+This will produced \textit{italicized} text.
+
+This will produced \textbf{bold face} text.
+
+This will produced \textsc{small caps} text.
+
+% you can use texttt for url for example 
+This will produced \texttt{typewriter font} text.
+
+example: Please visit my website at \url{https://me.fantodev.com} or
+\href{https://next.fantodev.com}{my website}.
+
+\vspace*{1cm}
+Please excuse my dear aunt Sally.
+
+Please excuse my \begin{Large}dear aunt Sally\end{Large}.
+
+Please excuse my \begin{huge}dear aunt Sally\end{huge}.
+
+% Please excuse my \begin{Huge}dear aunt Sally\end{Huge}.
+
+Please excuse my \begin{normalsize}dear aunt Sally\end{normalsize}.
+
+Please excuse my \begin{small}dear aunt Sally\end{small}.
+
+Please excuse my \begin{scriptsize}dear aunt Sally\end{scriptsize}.
+
+Please excuse my \begin{tiny}dear aunt Sally\end{tiny}.
+
+\vspace*{1cm}
+
+\begin{center} This line is centered \end{center}
+\begin{flushleft} This line is left-justified \end{flushleft}
+\begin{flushright} This line is left-justified \end{flushright}
+
+
+\centering
+% % \Large
+% \tiny
+% \flushbottom
+This line is centered\\
+This line is centered\\
+This line is centered
+
+\flushleft
+
+\section{Linear Funtions}
+        \subsection{Slope-Intercept Forms}
+                \shortlorem
+                \subsubsection{Exemple one}
+                \subsubsection{Exemple two}
+                \subsubsection{Exemple three}
+        \subsection{Standart Forms}
+        \subsection{Point-Intercept Forms}
+\section{Quadratic Functions}
+        \subsection{Vertex Forms}
+        \shortlorem
+        \subsection{Standart Forms}
+        \shortlorem
+        \subsection{Factored Forms}
+
+\end{document}
