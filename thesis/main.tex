@@ -2,40 +2,25 @@
 \usepackage{preamble}
 
 
-
 \begin{document}
-
+\selectlanguage{ngerman}
 \input{titel.tex}
 
-
-\chapter*{Abstract}
-\label{sec:abs}
-\addcontentsline{toc}{chapter}{\nameref{sec:abs}}
-\lorem
+\section*{Abstract}
+\addcontentsline{toc}{section}{Abstract}
 
 
+\section*{Danksagung}
+\addcontentsline{toc}{section}{Danksagung}
 
-\chapter*{Danksagung}
-\label{sec:dank}
-\addcontentsline{toc}{chapter}{\nameref{sec:dank}}
-\lorem
 
-\chapter*{Declaration}
-\lorem
-
+% adding the toc 
 \tableofcontents
 
-\chapter{Einleitung}
-\input{chapters/Einleitung.tex}
+\newpage
 
-\chapter{Grundlagen}
-\input{chapters/Grundlagen.tex}
-
-\chapter{Implementation}
-\input{chapters/Implementation.tex}
-
-\chapter{Fazit}
-\input{chapters/Fazit.tex}
+% adding the layout of the document
+\input{layout.tex}
 
 
 \end{document}
